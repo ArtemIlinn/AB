@@ -32,3 +32,22 @@ where Paying share is the share of users who made a purchase.
 To calculate the sample size, it is necessary to estimate the variance in the test and control groups. Since the sample size is calculated before the sample itself is recruited, these variances are estimated by averaging the variance over several past periods.
 
 To analyze changes in quantitative metrics, we can use a T-test or a bucket test.
+
+
+## 📥 Conversions and relational metrics
+Conversion is the percentage of users who completed the target
+action. It is can be calculated using the formula: 
+
+$CR_{X to Y} = \frac{K}{N} ⋅ 100$%
+
+where $K$ is the number of users who performed the target action, $Y$ (reached step $Y$), $N$ is the number of users who performed action $X$ (reached step $X$).
+
+The variance of conversion metrics is calculated using the formula:
+
+$Var_{Bernoulli} = \bar{p} ⋅ (1 - \bar{p})$
+
+where $\bar{p}$ - calculated conversion.
+
+To calculate the required sample size for conversion metrics, at the experiment planning stage it is necessary to estimate the variances of the test and control groups. To do this, the variances of the conversion metric over past periods are averaged.
+
+Ratio metrics differ from quantitative and conversion metrics in that for them the randomization unit chosen within the experiment is not coincides with the unit of analysis. For such metrics, the T-test and Z-test for proportions cannot be used in their pure form.
